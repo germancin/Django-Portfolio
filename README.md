@@ -455,8 +455,8 @@ You should see this
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-jobs.png" alt="admin-jobs"  >
 
-As you see there now wwe can see the Jobs Object and from here we can execute any CRUD action
+As you see there now we have the Jobs Object and from here we can execute any CRUD action
 
 If you find any problem with migrations and decide to re-do everything you can follow this article very usefull
-``https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html``
+https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html
 
