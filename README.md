@@ -294,7 +294,7 @@ If you can see this **!!congratulations!!**
 
 So far we just activate the Admin section which will let us manage our information related to our project.
 
-**The next step is create a user and password to be able to access the admin section**
+**The next step is create a SUPERUSER and its credentials to be able to interact with the database**
 
 ``python manage.py createsuperuser``
 
@@ -316,4 +316,77 @@ You should see this
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-front.png" alt="admin-ui"  >
 
+But now we have to create a database/tables/objects for our jobs app in order to 
+dynamically add new jobs and automatically be populated in our page.
+
+So there are several things we have to be aware of
+
+    1. We have to create our models within each app
+    2. We have to connect our model app to our project
+    3. We have also to connect our whole app to our main project
+    4. After all of this We need to migrate this new created models
+    
+**So let's create our model**
+Here basically we are setting the fields of the jobs "table"
+
+In order to do that lets open the models.py file located at jobs app
+
+``jobs/models.py``
+
+The file looks like this in the beginning
+
+```
+from django.db import models
+
+# Create your models here.
+```
+
+Here what are we going to do is adding the fields we will be filling up as information for our jobs
+
+Let's create a python class called ``Job``
+
+```python
+from django.db import models
+
+# This will allow us to create class called job with all the functionality that we need to save
+# this object into the database
+class Job(models.Model):
+    image = models.ImageField(upload_to = 'images/')
+    sumary = models.CharField(max_length=400, ${blank=True, null=True})
+    technology = models.CharField(max_length=400, ${blank=True, null=True})
+```
+
+You can go here: https://docs.djangoproject.com/en/2.0/ref/models/fields/#field-types
+
+and check more about Field Types
+
+
+After this we have to connect our ``Jobs`` App to our project and we do that going to 
+the project folder ``portfolio`` and open file called ``settings.py`` 
+
+look for this section
+```python
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
+Here we are going to add our apps so our project knows about the existence of these ones
+
+Also you can see in this piece of code that we have admin, auth, sessions, messages etc..
+
+well these are the apps that Django give us out of the box and if you won't need some of them then you can delete them
+
+but for this project we will use them so what we have to do is adding the job app.
+
+So our code will look like this after adding it.
+
+
+Now all the image are going to be saved in one single place of source so maje sure to create the folder
 
