@@ -240,7 +240,19 @@ portfolio-project/
 
 As you can see we have 2 new folders "Apps" ``blog`` and ``jobs`` these are our new apps.
 
+To simplify the view we should have this structure
+
+```
+portfolio-project/
+            ├── blog
+            ├── db.sqlite3
+            ├── jobs
+            ├── manage.py
+            └── portfolio
+```
 If you haven't commit this is a good moment to do it.
+
+
 
 
 
