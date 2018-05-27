@@ -508,6 +508,16 @@ type: ``CREATE DATABASE portfoliodb;``
 
 And this is it we won't need to come back to this app
 
+**Let's update setting.py**
 
+Open ``settings.py`` and look for the piece of code ``DATABASES`` that looks like this
 
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
  
