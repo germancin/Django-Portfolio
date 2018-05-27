@@ -379,13 +379,9 @@ INSTALLED_APPS = [
 ```angular2html
 
 Here we are going to add our apps so our project knows about the existence of these ones
-
 Also you can see in this piece of code that we have admin, auth, sessions, messages etc..
-
 well these are the apps that Django give us out of the box and if you won't need some of them then you can delete them
-
 but for this project we will use them so what we have to do is adding the job app.
-
 So our code will look like this after adding it.
 
 
