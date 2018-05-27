@@ -119,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# This is how Django knows where to save
+MEDIA_ROOT = os.path.join(BASE_DIR, 'resources')
+
+# This is how we will call it in our app
+MEDIA_URL = '/resources/'

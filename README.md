@@ -352,8 +352,8 @@ from django.db import models
 # this object into the database
 class Job(models.Model):
     image = models.ImageField(upload_to = 'images/')
-    sumary = models.CharField(max_length=400, ${blank=True, null=True})
-    technology = models.CharField(max_length=400, ${blank=True, null=True})
+    sumary = models.CharField(max_length=400)
+    technology = models.CharField(max_length=400)
 ```
 
 You can go here: https://docs.djangoproject.com/en/2.0/ref/models/fields/#field-types
@@ -419,12 +419,44 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'resources')
 MEDIA_URL = '/resources/'
 ```
 
+Before hit migrations we have to install ``Pillow`` so we can handle images
 
+```pip install Pillow```
 
-There you have now We have to run 
+There you have now run
 
+``` python manage.py makemigrations ``` 
 
+You should get this
 
+```angularjs
+Migrations for 'jobs':
+  jobs/migrations/0001_initial.py
+    - Create model Job
+```
 
+After this we have to register our job app in the admin
 
-Now all the image are going to be saved in one single place of source so maje sure to create the folder
+Go to the the folder ``jobs/admin/py`` and add this code 
+
+```python
+from django.contrib import admin
+
+# import the Job class
+from .models import Job
+
+# register the Job class into Admin section
+admin.site.register(Job)
+```
+
+Now let's test this going to our app paste ``http://127.0.0.1:8000/admin/``
+
+You should see this
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-jobs.png" alt="admin-jobs"  >
+
+As you see there now wwe can see the Jobs Object and from here we can execute any CRUD action
+
+If you find any problem with migrations and decide to re-do everything you can follow this article very usefull
+``https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html``
+
