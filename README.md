@@ -487,7 +487,7 @@ urlpatterns = [
 
 # Let's move to POSTGRES
 
-**Why to move to postgress?**
+**Why moving to postgress?**
 
 Well in a local environment sqlite works just fine but if we want to take this to production then 
 we better use a more robust DB to handle a vast amount of work.
@@ -520,4 +520,35 @@ DATABASES = {
     }
 }
 ```
- 
+
+Your code now have to looks like this
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'postgres',
+        'PASSWORD': 'secure123',
+        'HOST':'127.0.0.1',
+        'PORT':'5432',
+    }
+}
+```
+
+Now we need to install ``psycopg2`` in order to communicate with our DB
+
+``pip install psycopg2-binary``
+
+Then you will have to migrate the models to the mew postgresdb 
+
+``python manage.py migrate``
+
+We will have to re-create the SUPERUSER so run 
+
+```python manage.py createsuperuser```
+
+After this run server and should be working normally
+
+if so **!!congratulations!!**
+
