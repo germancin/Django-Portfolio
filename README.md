@@ -384,7 +384,31 @@ well these are the apps that Django give us out of the box and if you won't need
 but for this project we will use them so what we have to do is adding the job app.
 So our code will look like this after adding it.
 
+```
 
-Now all the image are going to be saved in one single place of source so maje sure to create the folder
+```python
+INSTALLED_APPS = [
+    'jobs.apps.JobsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
 
 ```
+
+So what ```'jobs.apps.JobsConfig',``` means is 
+
+the first part ``jobs`` is the name of our app 
+then `apps` is making reference to the ``apps.py`` file
+And `JobsConfig` if you open the file ``apps.py `` you'll see a auto generated ``class`` by Django called ```JobsConfig```
+
+There you have now We have to run 
+
+
+
+
+
+Now all the image are going to be saved in one single place of source so maje sure to create the folder
