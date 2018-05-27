@@ -190,6 +190,57 @@ project/
 ```
 These apps belong to a one project and can be reused in other projects.
 
+** That been said let's create our first app.
+
+### Creating our first APP
+
+Be sure you are inside our folder ``portfolio-project`` then...
+
+``python manage.py startapp blog``
+
+And
+
+``python manage.py startapp jobs``
+
+So now the structure so far should look like this
+
+```
+portfolio-project/
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── jobs
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+└── portfolio
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-36.pyc
+    │   ├── settings.cpython-36.pyc
+    │   ├── urls.cpython-36.pyc
+    │   └── wsgi.cpython-36.pyc
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
+
+As you can see we have 2 new folders "Apps" ``blog`` and ``jobs`` these are our new apps.
+
+If you haven't commit this is a good moment to do it.
 
 
 
