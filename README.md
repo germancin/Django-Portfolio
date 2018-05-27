@@ -177,8 +177,8 @@ Now we can see more files like  ``db.sqlite3`` etc..
 
 How Django structure a website is: the top level is Django project and a project is composed by several apps
 
-**Ex.** Our project is called ``portfolio`` but beside we will have apps related to this project like ``blog`` 
-so ``blog`` is and app that belongs to the ``portfolio`` project.
+**Ex.** Our project is called ``portfolio`` but beside we will have apps related to this project like ``blog`` and ``jobs``  
+so ``blog`` and ``jobs`` are the apps which belong to the ``portfolio`` project.
 
 **This is extremely important to understand because is the way Django framework thinks.** 
 
@@ -190,7 +190,7 @@ project/
 ```
 These apps belong to a one project and can be reused in other projects.
 
-** That been said let's create our first app.
+** That been said let's create our first app.**
 
 ### Creating our first APP
 
