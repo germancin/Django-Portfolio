@@ -492,3 +492,22 @@ urlpatterns = [
 Well in a local environment sqlite works just fine but if we want to take this to production then 
 we better use a more robust DB to handle a vast amount of work.
 
+Go to https://postgresapp.com/ for MAC and Download the app
+
+open it and initiate 
+
+then select the postgres DB and it will open a terminal
+
+type: ``\password postgres``
+
+enter your password
+
+the create a database and for this project we will create ``portfoliodb``
+
+type: ``CREATE DATABASE portfoliodb;``
+
+And this is it we won't need to come back to this app
+
+
+
+ 
