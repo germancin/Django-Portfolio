@@ -402,8 +402,24 @@ INSTALLED_APPS = [
 So what ```'jobs.apps.JobsConfig',``` means is 
 
 the first part ``jobs`` is the name of our app 
+
 then `apps` is making reference to the ``apps.py`` file
+
 And `JobsConfig` if you open the file ``apps.py `` you'll see a auto generated ``class`` by Django called ```JobsConfig```
+
+
+Also we have to set where our ``media/images`` files are going to be saved so at the end 
+of this same ``settings.py`` file add this
+
+```python
+# This is how Django knows where to save
+MEDIA_ROOT = os.path.join(BASE_DIR, 'resources')
+
+# This is how we will call it in our app
+MEDIA_URL = '/resources/'
+```
+
+
 
 There you have now We have to run 
 
