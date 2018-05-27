@@ -1,2 +1,6 @@
 # Django-Portafolio
-Nice Python Django Portafolio to show off.
+Nice Portafolio with Python Django 2.0.2
+
+### Step by Step - How to build your own portafolio.
+
+
