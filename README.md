@@ -437,7 +437,7 @@ Migrations for 'jobs':
 
 After this we have to register our job app in the admin
 
-Go to the the folder ``jobs/admin/py`` and add this code 
+Go to the the folder ``jobs/admin.py`` and add this code 
 
 ```python
 from django.contrib import admin
