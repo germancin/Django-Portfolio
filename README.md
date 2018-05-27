@@ -308,6 +308,12 @@ Password:
 Password (again):
 Superuser created successfully.
 ```
+Go back to your browser and paste ``http://127.0.0.1:8000/admin/``
 
+Insert your just created credentials and access to the front page of the admin
+
+You should see this
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-front.png" alt="admin-ui"  >
 
 
