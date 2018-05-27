@@ -460,3 +460,35 @@ As you see there now we have the Jobs Object and from here we can execute any CR
 If you find any problem with migrations and decide to re-do everything you can follow this article very usefull
 https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html
 
+# Let's set the media/resources images
+
+We have to go to the ``urls.py`` file on our project folder ``portfolio``
+and look for this pice of code
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+```
+
+We need to modify this piece of code and should end it up like this
+
+```python
+# must import settings
+from django.conf import settings
+# must import static
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+```
+
+# Let's move to POSTGRES
+
+**Why to move to postgress?**
+
+Well in a local environment sqlite works just fine but if we want to take this to production then 
+we better use a more robust DB to handle a vast amount of work.
+
