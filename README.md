@@ -785,7 +785,94 @@ Add some data into from the admin and you should have a page like this
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/blog-page.png"/>
 
 
+# Let's do a blog details page
 
+Here we wil present the content of the article
+
+First we need to set the request in ``blog/views.py``
+
+Here you have to add another path to handle this request
+
+```python
+from django.shortcuts import render, get_object_or_404
+
+def detail(request, blog_id):
+    blog_detail = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'blog/detail.html', {'blog':blog_detail})
+```
+
+ok ``blog_id`` comes from the ``blog/urls.py`` which I'll explain it in a second.
+
+``get_object_or_404`` is a Django shortcut function and what it does is 
+get the object or 404 if does not finds it **I know!! is so cool!** so
+
+we pass the object and ``pk`` means primary key which we pass the ``blog_id``
+
+Here is the Django documentation definition
+```Calls get() on a given model manager, but it raises Http404 instead of the model’s DoesNotExist exception.```
+
+and the ``return`` we already know how that works ;)
+
+
+**Let's pass the blog_id to our urls.py**
+
+Open ``urls.py`` an add a new element to the ``urlpatterns`` list
+
+``path('<int:blog_id>/', views.detail, name='detail-page'),``
+
+So what this means is ``'<int:blog_id>/'`` Django look for ``blog_id`` after ``/blog`` 
+which should be a ``integer`` 
+
+``views.detail`` as we already learned means look for ``detail`` class in ``views.py``
+
+``name='detail-page'`` is the reference url name
+
+So in this way how ``urls.py``  communicate/send params to ``views.py`` 
+
+so you should have ``blog/urls.py`` looking like this
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.allblogs, name='blog-page'),
+    path('<int:blog_id>/', views.detail, name='detail-page'),
+]
+```
+
+**Let's add the blog_id to the href attribute in blog page**
+
+This is easy cheese just do the same we have done before 
+```html 
+href="{% url 'detail-page' blog.id %}"
+```
+
+The next step is telling Django look for any static file in 
+ our project and combine it in one folder
+
+To do this got o your ``settings.py`` file and add these:
+
+```angularjs
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+```
+
+We've seen this before so I won't go there.
+
+Now go to your terminal and type : ``python manage.py collectstatic``
+
+so now we have a new folder in our top level root called ``static``
+make sure to don't push this to our repo.
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/static-folder.png" alt="admin-blog-add" />
+
+
+**Done!**
 
 
 
