@@ -569,10 +569,45 @@ Here are the steps:
 You can check the commits as I was creating the steps above:
 
 **1. Create a Blog models**
-https://github.com/germancin/Django-Portfolio/commit/4f6bd8fd8c76a31e55b6fab9a802d908d14ddb6e
-        
-        
 
+https://github.com/germancin/Django-Portfolio/commit/4f6bd8fd8c76a31e55b6fab9a802d908d14ddb6e
+     
+**2. Add the BLog app to the settings**
+
+``'blog.apps.BlogConfig'``
+
+**3. Create a migration** make sure to be placed at hte level of ``manage.py`` file
+
+``python manage.py makemigrations``
+
+You should see this in your terminal:
+```angularjs
+Migrations for 'blog':
+  blog/migrations/0001_initial.py
+    - Create model Blog
+```
+**4. Migrate**
+
+``python manage.py migrate``
+
+You should see this in your terminal:
+```angularjs
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, jobs, sessions
+Running migrations:
+  Applying blog.0001_initial... OK
+```
+
+**5. Add to the Admin**
+
+Go to ``blog/admin.py`` and add 
+
+```python
+from .models import Blog
+
+admin.site.register(Blog)
+```
+**Done!**
 
 
 
