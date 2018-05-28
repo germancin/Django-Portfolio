@@ -317,7 +317,7 @@ You should see this
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-front.png" alt="admin-ui"  >
 
 # Let's work on our first App (Jobs)
-But now we have to create a database/tables/objects for our jobs app in order to 
+Now we have to create a database/tables/objects for our jobs app in order to 
 dynamically add new jobs and automatically be populated in our page.
 
 So there are several things we have to be aware of
@@ -325,7 +325,7 @@ So there are several things we have to be aware of
     1. We have to create our models within each app
     2. We have to connect our model app to our project
     3. We have also to connect our whole app to our main project
-    4. After all of this We need to migrate this new created models
+    4. After all of these We need to migrate this new created models
     
 **So let's create our model**
 Here basically we are setting the fields of the jobs "table"
@@ -495,7 +495,7 @@ we better use a more robust DB to handle a vast amount of work.
 
 Go to https://postgresapp.com/ for MAC and Download the app
 
-open it and initiate 
+Open it and initiate it 
 
 then select the postgres DB and it will open a terminal
 
@@ -503,7 +503,7 @@ type: ``\password postgres``
 
 enter your password
 
-the create a database and for this project we will create ``portfoliodb``
+then create a database so for this project we will create a database called ``portfoliodb``
 
 type: ``CREATE DATABASE portfoliodb;``
 
@@ -556,4 +556,41 @@ if so **!!congratulations!!**
 # Go and create Blog
 
 **Follow the same steps above as practice**
+
+Here are the steps:
+
+```angularjs
+    1. Create a Blog models
+    2. Add the BLog app to the settings
+    3. Create a migration
+    4. Migrate
+    5. Add to the Admin
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
