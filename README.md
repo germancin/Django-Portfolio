@@ -607,7 +607,16 @@ from .models import Blog
 
 admin.site.register(Blog)
 ```
-**Done!**
+
+Now go to your admin section and you should see the Blog object:
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-blog.png" alt="admin-blog" />
+
+If you try to add a new record for blog should look like this:
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-blog-add.png" alt="admin-blog-add" />
+
+**!!Congratulations!!**
 
 
 
