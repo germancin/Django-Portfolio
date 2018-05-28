@@ -776,6 +776,13 @@ As you see this looks very similar to our ``jobs/views`` so is clear
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/blog-template.png"/>
 
+Now create ``allblogs.html`` content please check the committed file.
+
+https://github.com/germancin/Django-Portfolio/commit/12470ea3f7635e2d691faa41b65a2063ff642d92
+
+Add some data into from the admin and you should have a page like this
+
+
 
 
 
