@@ -566,8 +566,12 @@ Here are the steps:
     4. Migrate
     5. Add to the Admin
 ```
+You can check the commits as I was creating the steps above:
 
-
+**1. Create a Blog models**
+https://github.com/germancin/Django-Portfolio/commit/4f6bd8fd8c76a31e55b6fab9a802d908d14ddb6e
+        
+        
 
 
 
