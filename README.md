@@ -774,7 +774,7 @@ As you see this looks very similar to our ``jobs/views`` so is clear
 
 **Create the allblogs.html**
 
-<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/blog-template.png"  >
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/blog-template.png"/>
 
 
 
