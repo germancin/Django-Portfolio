@@ -190,7 +190,7 @@ project/
 ```
 These apps belong to a one project and can be reused in other projects.
 
-** That been said let's create our first app.**
+**That been said let's create our first app.**
 
 ### Creating our first APP
 
@@ -254,15 +254,15 @@ If you haven't commit this is a good moment to do it.
 
 # Let's talk about Models and Databases.
 
-Django give us several other apps we can interact with out of the box
-apps like Admin, Users, Sessions etc.. these let us manipulate our Database
-within a visual UI and the way of activate this is:
+Django give us several other apps we can interact with 
+like Admin, Users, Sessions etc.. these let us manipulate our Database
+within a visual interface and the way of activate this is:
 
 Lets locate where the manage.py file is at and type.
 
 ```python manage.py migrate```
 
-This what would do is creating the all the objects related to users, sessions, and admin
+What this would do is creating all the objects related to users, sessions, and admin
 
 After running the above you should see this:
 
@@ -290,7 +290,7 @@ Now go to your browser and paste ``` http://127.0.0.1:8000/admin/``` you should 
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin.png" alt="admin-ui" width="555" >
 
-If you can see this **!!congratulations!!**
+If you can see that **!!congratulations!!**
 
 So far we just activate the Admin section which will let us manage our information related to our project.
 
@@ -316,6 +316,7 @@ You should see this
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/admin-front.png" alt="admin-ui"  >
 
+# Let's work on our first App (Jobs)
 But now we have to create a database/tables/objects for our jobs app in order to 
 dynamically add new jobs and automatically be populated in our page.
 
@@ -551,4 +552,8 @@ We will have to re-create the SUPERUSER so run
 After this run server and should be working normally
 
 if so **!!congratulations!!**
+
+# Go and create Blog
+
+**Follow the same steps above as practice**
 
