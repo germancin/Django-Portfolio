@@ -660,6 +660,8 @@ your folder structure should look like this
 
 <img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/jobs-template.png" />
 
+Now add some html into the ``home.html`` file and we should now have a home page.
+
 
 
 
