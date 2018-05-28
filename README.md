@@ -618,6 +618,71 @@ If you try to add a new record for blog should look like this:
 
 **!!Congratulations!!**
 
+# It's time for our home page
+
+To do things quite different we are going to add our home page into the blog app since 
+this is the most important app in our project so to achieve this we will have to go to 
+the jobs app to the ``views.py`` file and add some code there.
+
+So add this code and I explain what this is
+
+```python
+from .models import Job
+
+def home(request):
+    jobs = Job.objects
+    return render(request, 'jobs/home.html')
+```
+As we can see there is a class called ``home`` which we'll call it from the ``urlpatterns`` section in our ``urls.py`` file
+so let's do that.
+
+In ``urls.py`` file first we have to import ``import jobs.views`` and after that your ``urlpatterns`` list should look like this
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', jobs.views.home, name='home-page'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+``` 
+
+so we added  ``path('', jobs.views.home, name='home-page'),``
+
+where ``jobs.views.home`` job.views is the obviously views from jobs and the .home is the class we just create.
+
+``name='home-page'`` name is just the identifier to called later in the urls.
+
+
+**Create the home.html**
+
+Go to the jobs app and create the template with a home.html
+
+your folder structure should look like this
+
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/jobs-template.png" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
