@@ -782,6 +782,7 @@ https://github.com/germancin/Django-Portfolio/commit/12470ea3f7635e2d691faa41b65
 
 Add some data into from the admin and you should have a page like this
 
+<img src="https://github.com/germancin/Django-Portfolio/blob/master/readme_resources/blog-page.png"/>
 
 
 
