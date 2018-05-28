@@ -663,6 +663,28 @@ your folder structure should look like this
 Now add some html into the ``home.html`` file and we should now have a home page.
 
 
+# Bootstrap integration for a nice looking portfolio
+
+**Let's integrate bootstrap in our Django project**
+
+Go to https://getbootstrap.com/docs/4.1/examples/album/ 
+
+Go to the code behind Copy and Paste it in our just created ``home.html``
+and later we will start replacing the elements with a dynamic info.
+
+Now we need to replace the urls of the bootstrap files and in this case for simplicity we will use the CDN (Content Delivery Network)
+
+So go to the home page of the bootstrap site: https://getbootstrap.com
+and look for the CDN section and copy the required links.
+ 
+You can see this commit 
+
+https://github.com/germancin/Django-Portfolio/commit/4d667026db6e6b529eddcaece950869ee1769f42
+
+just make sure to change the info in the bottom and the top message.
+
+
+
 
 
 
