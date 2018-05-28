@@ -122,10 +122,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # This is how Django knows where to save
 MEDIA_ROOT = os.path.join(BASE_DIR, 'resources')
-
 # This is how we will call it in our app
 MEDIA_URL = '/resources/'
