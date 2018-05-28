@@ -683,6 +683,96 @@ https://github.com/germancin/Django-Portfolio/commit/4d667026db6e6b529eddcaece95
 
 just make sure to change the info in the bottom and the top message.
 
+# Let's add the jobs to our home
+
+Django makes this extremely easy 
+
+In our ``jobs/views.py`` we already already called the Job model like this 
+``from .models import Job`` 
+
+and right after the home class we have ``jobs = Job.objects`` so what iis happening here is we are getting the objects from Job and assigning it to the jobs variable
+
+and now we are going to pass this whole object to the request so we wil end it up with a code like this
+
+```python
+from django.shortcuts import render
+from .models import Job
+
+def home(request):
+    jobs = Job.objects
+    return render(request, 'jobs/home.html', {'jobs':jobs})
+```
+
+Now we can go to ``home.html`` and loop it up
+
+**Let's loop jobs**
+
+Template syntax in Django is quite easy and straightforward so please have as a look this section to see how the loop 
+is implemented.
+
+https://github.com/germancin/Django-Portfolio/commit/40f01fe08f0afe99d44943062905281b37a5e894#diff-2b18d7445be0676f86b4aa70c30a7110R60
+
+I am adding here the Built-in tag reference from Django Documentation
+
+https://docs.djangoproject.com/en/2.0/ref/templates/builtins/
+
+# URL include() for our Blog App
+
+In Django We can have a url path that forwards the request to another url path App structure
+within our project and that is exactly what we will do here.
+
+**Create the url path for blog**
+
+Let's open ```portfolio/urls.py``` and lets add another path to our ``urlpatterns`` list
+
+Here we will add this code ``path('blog/', include('blog.urls')),``
+
+which make reference to the urls from blog so this means that we must have something
+into ``urls.py`` from blog app 
+
+So your ``portfolio/urls.py`` should look like this 
+
+**Notice** that we have to import include
+
+```python
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', jobs.views.home, name='home'),
+    path('blog/', include('blog.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+Now let's create the file ``blog/urls.py``  and add this code 
+
+```python
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.allblogs, name='blog-page'),
+]
+```
+
+As you see we are making reference to ``views.allblogs`` so as you could imagine 
+this means ``allblogs`` is a class from views in blog app so our ``views.py``
+should look like this
+
+```python
+from django.shortcuts import render
+
+from .models import Blog
+
+def allblogs(request):
+    blogs = Blog.objects
+    return render(request, 'blog/allblogs.html', {'blogs':blogs})
+```
+
+As you see this looks very similar to our ``jobs/views`` so is clear
+
+
 
 
 
