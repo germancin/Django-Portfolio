@@ -907,10 +907,7 @@ and databases credentials different.
 
 
 After adding all credentials in the server side on the ``local_settings.py`` file
-
-We have to run migrate ont he server side to run de database.
-
-`` python manage.py migrate ``
+**NOTE:** int he database HOST you have to set 127.0.0.1
 
 **Let's create ``requirements.txt`` file in order to send it to the server and run 
 all the project dependencies**
@@ -919,10 +916,25 @@ run: ``pip freeze > requirements.txt``
 
 git push and git pull from server.
 
+**Run requirements.txt from server side**
+
+``pip install -r requirements.txt``
 
 
- 
+**Let's run migrations**
 
+We have to run migrate ont he server side to run de database.
+
+`` python manage.py makemigrations ``
+`` python manage.py migrate ``
+
+**Create superuser server side**
+
+`` python manage.py createsuperuser  ``
+
+**Collect static files**
+
+``python manage.py collectstatic``
 
 
 
