@@ -875,6 +875,13 @@ make sure to don't push this to our repo.
 **Done!**
 
 
+# Now Let's deploy this bad boy to a server 
+
+**Follow this steps on this link**
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+
 
 
 
