@@ -881,8 +881,18 @@ make sure to don't push this to our repo.
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
 
+# Now let's separate our credentials from local to the server.
 
+In order to do this we have to add the following code into our ``settings.py``
 
+```python
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+```
+
+what this code does is import our .local_settings and if for reason there is an error go a pass that exception
 
 
 

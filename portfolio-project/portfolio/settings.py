@@ -133,3 +133,8 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'resources')
 # This is how we will call it in our app
 MEDIA_URL = '/resources/'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
