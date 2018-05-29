@@ -894,7 +894,34 @@ except ImportError:
 
 what this code does is import our .local_settings and if for reason there is an error go a pass that exception
 
+**Create the local_settings.py file**
 
+make sure you do not push this file to the repo so this should be added to the .gitignore
+
+Push the changes to the repo and Pull it form the server
+
+The next Step is Create the same file ``local_settings.py`` into the server 
+
+Add all the credentials from settings.py file into this file with the secure, allowhost
+and databases credentials different.
+
+
+After adding all credentials in the server side on the ``local_settings.py`` file
+
+We have to run migrate ont he server side to run de database.
+
+`` python manage.py migrate ``
+
+**Let's create ``requirements.txt`` file in order to send it to the server and run 
+all the project dependencies**
+
+run: ``pip freeze > requirements.txt``
+
+git push and git pull from server.
+
+
+
+ 
 
 
 
