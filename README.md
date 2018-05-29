@@ -936,10 +936,31 @@ We have to run migrate ont he server side to run de database.
 
 ``python manage.py collectstatic``
 
+**Allow ufc firewall connect to :8000**
 
+``sudo ufw allow 8000``
 
+**Run server**
 
+``python manage.py runserver 0.0.0.0:8000``
 
+now you can test it with your online ip:8000
+
+# Let's install Guinicorn**
+
+``pip install gunicorn``
+
+Since we installed gunicorn lets 
+
+``pip freeze > requirements.txt``
+
+Now run
+``gunicorn --bind 0.0.0.0:8000 portfolio.wsgi``
+
+# Is time to Create a Gunicorn systemd Service File
+
+Follow this part here: 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
 
 
 
